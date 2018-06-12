@@ -3,7 +3,7 @@ header('Content-Type: text/html; charset=UTF-8');
 define('BASE_DIR','C:/AppServ/www/po/');
 
 /* buscar msgid  */
-$array = file("en_EN1.po");
+$array = file("original_en_EN.po");
 foreach ($array as $mystring){
 	$buscar = 'msgid "';
 	$pos = strpos($mystring, $buscar);
@@ -18,11 +18,9 @@ echo '<pre>';
 
 
 /* array traduciones */
-$traduccions = file("mia_es.txt");
-
-
+$traduccions = file("traducido.txt");
 /* remplazar traduciones */
-$array = file("en_EN1.po");
+$array = file("traducido_es_ES.po");
 $i = 0;
 $p= 0;
 foreach ($array as $mystring){
