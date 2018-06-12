@@ -2,7 +2,7 @@
 header('Content-Type: text/html; charset=UTF-8');
 define('BASE_DIR','C:/AppServ/www/po/');
 
-/* buscar msgid  */
+/* buscar msgid  y los muestra en pantalla */
 $array = file("original_en_EN.po");
 foreach ($array as $mystring){
 	$buscar = 'msgid "';
@@ -13,13 +13,14 @@ foreach ($array as $mystring){
 	 }
 }
 echo '<pre>';
-// print_r($resultadoId);
+print_r($resultadoId);
+
+/* copiar archivos y traducirlos mediante ->https://translate.google.com/toolkit/list?hl=es -> guardar resultado en traduciones.txt*/
 
 
-
-/* array traduciones */
+/* Ficheri traducciones */
 $traduccions = file("traducido.txt");
-/* remplazar traduciones */
+/* Renombrar archivo.po y reemplaza las traduciuones traduciones */
 $array = file("traducido_es_ES.po");
 $i = 0;
 $p= 0;
@@ -40,5 +41,5 @@ foreach ($array as $mystring){
 		$mystring = 'msgstr '.$traduccio.'';
 		$i++;
 	}
-	 print_r($mystring);
+	 // print_r($mystring);
 }
