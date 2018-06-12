@@ -3,7 +3,7 @@ header('Content-Type: text/html; charset=UTF-8');
 define('BASE_DIR','C:/AppServ/www/po/');
 
 /* buscar msgid  y los muestra en pantalla */
-$array = file("original_en_EN.po");
+$array = file("en_EN.po");
 foreach ($array as $mystring){
 	$buscar = 'msgid "';
 	$pos = strpos($mystring, $buscar);
@@ -21,7 +21,7 @@ print_r($resultadoId);
 /* Ficheri traducciones */
 $traduccions = file("traducido.txt");
 /* Renombrar archivo.po y reemplaza las traduciuones traduciones */
-$array = file("traducido_es_ES.po");
+$array = file("ca_CA.po");
 $i = 0;
 $p= 0;
 foreach ($array as $mystring){
